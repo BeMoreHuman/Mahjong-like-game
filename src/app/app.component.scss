@@ -1,0 +1,36 @@
+
+.mahjong {
+  &__field {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 760px;
+  }
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 100px;
+    height: 30px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 22px;
+    font-weight: bold;
+    color: transparent;
+    cursor: pointer;
+    border: 3px solid #000000;
+    &:hover {
+      background: #627af8;
+    }
+    &--active {
+      color: #000000;
+      background: #627af8;
+    }
+    &--pair {
+      outline: none;
+      color: #000000;
+      background: #ecff59;
+    }
+  }
+}

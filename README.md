@@ -1,5 +1,8 @@
 # Mahjong-like-game
 
+Test the game!!!
+https://bemorehuman.github.io/Mahjong-like-game/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
 
 ## Development server

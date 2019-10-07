@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   /**
    * Shuffles array in place. ES6 version
-   * @param {Array of CardInterface} arr items An array containing the items.
+   * @param {Array of number} arr items An array containing the items.
    */
   shuffleArray(arr: number[]): number[] {
     for (let i = arr.length - 1; i > 0; i--) {

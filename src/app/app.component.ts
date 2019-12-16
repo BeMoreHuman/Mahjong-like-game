@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {LogicService, MemoryCard} from "./services/logic-service.service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  title = 'mahjong-game';
+  title = 'Memory game';
   gameField: number[] = [];
   prevValue = 0;
   currentValue = 0;
@@ -16,7 +17,13 @@ export class AppComponent implements OnInit, AfterViewInit {
   clickedCard: HTMLDivElement;
   attempt = 0;
 
-  constructor(){}
+
+  selectedCard: MemoryCard;
+
+  constructor(
+    public logicService: LogicService,
+  ) {
+  }
 
   ngOnInit(): void {
     // const userSelect = Number(prompt('Select game field size:', '6'));
@@ -25,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     //   alert('Pls reload the page and select game field...');
     // }
 
-    this.initGame();
+    // this.initGame();
   }
 
   ngAfterViewInit(): void {
@@ -117,5 +124,29 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   checkPair(): boolean {
     return this.currentValue === this.prevValue;
+  }
+
+  onSelect(card: MemoryCard): void {
+    if (this.selectedCard) {
+      card.isActive = !card.isActive;
+      if (this.checkPairs(card)) {
+        return;
+      } else {
+        setTimeout(() => {
+          this.selectedCard = null;
+          card.isActive = false;
+        }, 300);
+      }
+    } else {
+      this.selectedCard = card;
+    }
+  }
+
+  checkPairs(selected: MemoryCard): boolean {
+    if (this.selectedCard.value === selected.value) {
+      return true;
+    } {
+      return false;
+    }
   }
 }

@@ -1,5 +1,5 @@
 
-.mahjong {
+.memory {
   &__field {
     display: flex;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
     padding: 5px;
     font-size: 22px;
     font-weight: bold;
-    color: transparent;
+    //color: transparent;
     cursor: pointer;
     border: 3px solid #000000;
     &:hover {

@@ -1,0 +1,23 @@
+ul {
+  list-style-type: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+li {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  width: calc(50% - 10px);
+  height: 100px;
+  text-align: center;
+  border: 2px solid #f39c12;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    background: #ecf0f1;
+  }
+}

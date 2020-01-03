@@ -1,19 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to the {{ title }}!
   </h1>
 </div>
 <main class="game-field">
-  <header class="game-field__header"></header>
+  <header class="game-field__header">
+    <div class="game-btn__wrap">
+      <button class="game-btn game-btn--start" [disabled]="isReadyToPlay" (click)="startGame()">Start</button>
+      <button class="game-btn game-btn--end" [disabled]="!isReadyToPlay" (click)="giveUp()">End</button>
+    </div>
+  <div class="game-time">Time: {{playerGameTime}}</div>
+  </header>
   <section class="game-field__body">
     <div class="game-field__container">
-      <ul class="game-card__list">
+      <ul class="game-card__list" *ngIf="isReadyToPlay; else initialState">
         <li class="game-card__item" [ngClass]="{'game-card__item--done': item.isDone}" *ngFor="let item of cardArray; index as i" (click)="showCard(item,(i + 1))">
           <span *ngIf="item.isEnabled">{{item.value}}</span>
         </li>
       </ul>
+      <ng-template #initialState>
+        <p>Game field</p>
+      </ng-template>
     </div>
     </section>
-  <footer class="game-field__footer"></footer>
+  <footer class="game-field__footer">
+    <div class="copyright">&copy; Copyright 2020. All Rights Reserved.</div>
+  </footer>
 </main>

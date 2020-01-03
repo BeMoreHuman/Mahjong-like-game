@@ -27,3 +27,38 @@ li {
     }
   }
 }
+p {
+  text-align: center;
+}
+
+.game-btn {
+  &__wrap {
+    width: 100%;
+    text-align: center;
+  }
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 150px;
+  margin: 0 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  &--start {
+    background: #2ecc71;
+  }
+  &--end {
+    background: #e74c3c;
+  }
+}
+
+.game-time {
+  padding: 0;
+  text-align: center;
+}
+
+.copyright {
+  padding: 0;
+  text-align: right;
+  font-size: 14px;
+}

@@ -20,4 +20,10 @@ li {
   &:hover {
     background: #ecf0f1;
   }
+  &.game-card__item--done {
+    background: #1abc9c;
+    &:hover {
+      background: #16a085;
+    }
+  }
 }

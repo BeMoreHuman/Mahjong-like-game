@@ -9,7 +9,7 @@
   <section class="game-field__body">
     <div class="game-field__container">
       <ul class="game-card__list">
-        <li class="game-card__item" *ngFor="let item of cardArray; index as i" (click)=showCard(item)>
+        <li class="game-card__item" [ngClass]="{'game-card__item--done': item.isDone}" *ngFor="let item of cardArray; index as i" (click)="showCard(item,(i + 1))">
           <span *ngIf="item.isEnabled">{{item.value}}</span>
         </li>
       </ul>
